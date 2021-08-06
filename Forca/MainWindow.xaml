@@ -1,0 +1,64 @@
+﻿<Window x:Name="frmPrincipal" x:Class="Forca.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Jogo da Forca" Height="658" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" FontFamily="Courier New" FontWeight="Bold" Icon="/icone.ico">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF7BE7FF" Offset="0"/>
+            <GradientStop Color="White" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid Loaded="Grid_Loaded">
+        <Button x:Name="btnInicioJogo" Content="Iniciar Jogo" Margin="550,10,10,0" VerticalAlignment="Top" Height="96" FontSize="30" FontFamily="Courier New" FontWeight="Bold" BorderBrush="{x:Null}" AllowDrop="True" Click="btnInicioJogo_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF7BE7FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Selecione uma opção para começar o jogo." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="cbxListaDoJogo" HorizontalAlignment="Left" Margin="10,39,0,0" VerticalAlignment="Top" Width="360" Text="Selecione aqui uma opção para jogar." TextOptions.TextFormattingMode="Display" BorderBrush="{x:Null}" SelectionChanged="cbxListaDoJogo_SelectionChanged">
+            <ComboBox.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF7BE7FF" Offset="1"/>
+                </LinearGradientBrush>
+            </ComboBox.Background>
+            <ListBoxItem x:Name="lstOpcao1" Content="Iniciar com palavra inserida manualmente."/>
+            <ListBoxItem x:Name="lstOpcao2" Content="Iniciar com palavras aleatórias carregado no jogo."/>
+        </ComboBox>
+        <Label x:Name="lblTituloPalavra" Content="Palavra" HorizontalAlignment="Left" Margin="10,63,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtPalavra" HorizontalAlignment="Left" Height="23" Margin="10,87,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" MaxLength="20" CharacterCasing="Upper"/>
+        <TextBox x:Name="txtDica" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" Margin="10,134,0,0" MaxLength="20" CharacterCasing="Upper" KeyDown="txtDica_KeyDown"/>
+        <Label x:Name="lblTituloDica" Content="Dica" HorizontalAlignment="Left" Margin="10,110,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPalavra" Content="Palavra" HorizontalAlignment="Left" Margin="311,378,0,0" VerticalAlignment="Top" FontSize="35"/>
+        <Label x:Name="lblTituloLetra" Content="Letra" HorizontalAlignment="Left" Margin="10,157,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtLetra" HorizontalAlignment="Left" Height="23" Margin="10,181,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="45" MaxLength="1" CharacterCasing="Upper" KeyDown="txtLetra_KeyDown"/>
+        <Label x:Name="lblChances" Content="Você pode errar 7 vezes..." HorizontalAlignment="Left" Margin="550,111,-83,0" VerticalAlignment="Top"/>
+        <Image x:Name="imgJogo" HorizontalAlignment="Left" Margin="10,219,0,29" Width="270" Source="Boneco/imagem1.png"/>
+        <Label HorizontalAlignment="Left" Margin="370,15,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnReinicia" Content="Jogar de Novo" Margin="385,10,249,0" FontStyle="Italic" Foreground="Red" AllowDrop="True" BorderBrush="{x:Null}" Height="96" VerticalAlignment="Top" Click="btnReinicia_Click" FontSize="17" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Animated">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF7BE7FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label Content="Trabalho de Demonstração 21/10/2014 - Maycon Wisley - SENAI - CTM Profº Kleber Petry" HorizontalAlignment="Left" Margin="10,0,0,0" Height="24" VerticalAlignment="Bottom"/>
+        <Button x:Name="btnVerificar" Content="Verificar" Margin="60,181,649,0" VerticalAlignment="Top" Height="23" BorderBrush="{x:Null}" Click="btnVerificar_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="#FF7BE7FF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="lblTituloLetrasDigitadas2" Content="Letras já digitadas" HorizontalAlignment="Left" Margin="269,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblPontuacao" Content="Pontuação: Você 0 x 0 Computador" HorizontalAlignment="Left" Margin="500,134,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblTituloLetrasDigitadas" Content="Letras Erradas" HorizontalAlignment="Left" Margin="269,157,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="LblInfo" Content="Info" HorizontalAlignment="Left" Margin="165,180,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
